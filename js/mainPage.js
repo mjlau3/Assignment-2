@@ -13,29 +13,47 @@ function viewLocation(locationName)
  // OUR CODE:
 var locationsArray = [];
 
-//var location = LocationWeatherCache.getWeatherAtIndexForDate(index, date, weatherData)
-
-var location {          //location OBJECT
-    
-    nickname: //input from user
-    latitude: //input from user geocoder
-    longitude: //input from user 
-    date: //current
-    forecasts:null
+//this is called a "object constructor function":
+function location(nickname, latitude, longitude, date, forecasts) {     
+    this.nickname = nickname;
+    this.latitude latitude;
+    this.longitude = longitude;  
+    this.date = date;
+    this.forecasts = null;
 };
 
+// Dummy locations:
+var location1 = new location("Monash", 37.9116, 145.1340, Date.prototype.simpleDateString());
 
-var forecasts {        // contains weather forecast from API
+var location2 = new location("Parliament House", 35.3082, 149.1244, Date.prototype.simpleDateString());
+
+//Add location object to locationsArray                  
+locationsArray.push(location1);
+locationsArray.push(location2);
+
+//HELP!.... 
+var forecasts = { 
+    latitude,longitude,date: //forecast returned by API"
+  
+    }
+
+
+//TBC:
+///////////////////////////////////////
+// Testing calling methods in locationWeatherCache():
+locationWeatherCache.locationAtIndex(0); //looks for first location
+LocationWeatherCache.addLocation(location1.latitude, location1.longitude, location1.nickname);
+LocationWeatherCache.removeLocationAtIndex(1);
+
+LocationWeatherCache(locations()
+
     
-    var data = LocationWeatherCache.getWeatherAtIndexForDate(index, date, callback)    
-}
-
-
-//Add location object to locationsArray                     
-locationsArray.push(location);
+    
+    
 
 ///////////////////////////////////////
 //FROM GEOCODER
+/*
 var latitude = //user input
 var longitude = //input
 var date = //input

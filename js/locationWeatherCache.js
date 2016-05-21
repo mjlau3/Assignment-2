@@ -54,17 +54,17 @@ function LocationWeatherCache()
     // property.  Returns the index of the added location.
     //
     this.addLocation = function(latitude, longitude, nickname)
-    {
-        
-        var locationKEY = "savedLocation";
-        localStorage.setItem(locationKEY, locationJSON);
+    {    
+        localStorage.setItem(APP_PREFIX, locationJSON)
+        return indexForLocation(latitude,longitude)
     }
 
     // Removes the saved location at the given index.
     // 
     this.removeLocationAtIndex = function(index)
     {
-        localStorage.removeItem(locationKEY);
+        var removedLocation = locations(index)
+        localStorage.removeItem(APP_PREFIX);
     }
 
     // This method is used by JSON.stringify() to serialise this class.
